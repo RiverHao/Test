@@ -1,0 +1,64 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Resource/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        function Test() {
+            var video = document.getElementById('myCanvas');
+            var ctx = video.getContext('2d');
+            var errocb = function () {
+                console.log('sth wrong!');
+            }
+            if (navigator.getUserMedia) { // 标准的API
+                alert('a');
+                navigator.getUserMedia({ "video": true }, function (stream) {
+                    video.src = stream;
+                    video.play();
+                }, errocb);
+            } else if (navigator.webkitGetUserMedia) { // WebKit 核心的API
+                navigator.webkitGetUserMedia({ "video": true }, function (stream) {
+                    video.src = window.webkitURL.createObjectURL(stream);
+                    video.play();
+                }, errocb);
+            }
+            var img = document.getElementById("img");
+            ctx.drawImage(img, 10, 10);
+            ctx.drawImage(video, 0, 0, 640, 480);
+
+            ctx.fillStyle = '#FF0000';
+            ctx.fillRect(0, 0, 80, 100);
+
+        }
+
+    </script>
+</head>
+<body>
+            <input type="button" value="PICTURE" onclick="Test()" />
+ 
+    <div>
+        @*<img src="~/Resource/image/baidu.png" id="img" />*@
+@*        <div style="height: 200px; width: 200px; float: left; background-color: green"></div>
+        <div style="height: 200px; background-color: blue; overflow: hidden">
+            <div style="height: 180px; width: 50%; margin: 10px 10px; background-color: #808080; float: left"></div>
+            <div style="height: 180px; margin: 10px 10px; background-color: brown;"></div>
+        </div>*@
+
+        <video id="myvideo" autoplay="" style='width: 640px; height: 480px'></video>
+        <img src="~/Resource/image/baidu.png" id="img"/>
+        <canvas id="myCanvas" width="640" height="480"></canvas>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

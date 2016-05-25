@@ -1,0 +1,13 @@
+﻿@span:50px;
+@dd:100px;
+
+@bk:lighten(hsl(80, 80%, 50%), 20%);
+
+.aa(@in,@out) {
+    width:@in;
+    height:@out;
+}
+#test {
+    .aa(100px,200px);
+    background-color:@bk;
+}

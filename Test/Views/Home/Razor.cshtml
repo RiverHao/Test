@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "小到大排序";
+}
+
+<script src="~/Resource/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    var arr = [12, 4, 5, 20, 11, 9, 3];
+    document.write("原数组元素为：" + arr.toString() + "<br>");
+    arr.sort();
+    //正序排序
+    function ascOrder(x, y) {
+        if (x > y) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    }
+    arr.sort(ascOrder);
+    document.write("按数字正序排序：" + arr.toString() + "<br>");
+</script>
+
+@*<h2>mail@@domain.com</h2>*@

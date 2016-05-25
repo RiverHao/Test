@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Indexcalendar</title>
+    <script src="~/Resource/calendar/js/Calendar.js"></script>
+    <script src="~/Resource/calendar/js/fun.js"></script>
+    <script src="~/Resource/calendar/js/jquery.js"></script>
+    <link href="css/calendar.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <div class="outer clearfix" id="calendarcontainer">
+            <iframe src="/Attendance/AttendanceTrack?userid=47317&datadate=2015-12-21&type=1"></iframe>
+            <input type="text" class="m-wrap small date-picker" id="SignTime" onclick()="GetMonth()"/>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    //function GetMonth() {
+    //    var date = new Date;
+    //    var year = date.getFullYear();
+    //    var month = date.getMonth() + 1;
+    //    month = (month < 10 ? "0" + month : month);
+    //    var mydate = (year.toString() + '-' + month.toString())
+    //}
+    //var Month = GetMonth();
+    //$('#SignTime').val(Month);
+</script>
+

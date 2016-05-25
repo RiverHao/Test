@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<html>
+    <head>
+        @*<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>*@
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0FDAqtURwushVlGlrLB3jypE"></script>
+        <link href="../../Content/StyleSheet1.less"  rel="stylesheet/less" type="text/css" />
+        <script src="http://cdn.bootcss.com/less.js/2.6.0/less.js"></script>
+    </head>
+
+
+
+
+<body>
+   @ViewBag.Name
+    <h2>gg@@mail.com</h2>
+    <input type="button" id="btn" value="按我" style="color:red"/> 
+    <div ng-app="myApp" ng-controller="myCtrl">
+    名:
+    <input type="text" ng-model="firstName"><br>
+    姓:
+    <input type="text" ng-model="lastName"><br>
+    <br>
+    姓名: {{firstName + " " + lastName}}
+
+    </div>
+
+    <div id="allmap">
+    </div>
+    <div id="test" ng-app="">
+        <p>我的第一个表达式： {{ 5 + 5 }}</p>
+    </div>
+
+</body>
+</html>
+
+<script>
+    //var app = angular.module('myApp', []);
+    //app.controller('myCtrl', function ($scope) {
+    //    $scope.firstName = "John";
+    //    $scope.lastName = "Doe";
+    //});
+
+    var x = 116.404;
+    var y = 39.915;
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(x, y);
+
+    var a = 0;
+    if (a) {
+        alert(1);
+    }
+    else {
+        alert(2)
+    }
+</script>

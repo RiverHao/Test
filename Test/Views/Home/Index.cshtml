@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        function PostBaidu() {
+            //http://data.zz.baidu.com/urls?site=www.fang.com&token=mvBuAMGpMc5i6bU7
+            $.post("http://data.zz.baidu.com/urls", { site: "www.fang.com", token: "mvBuAMGpMc5i6bU7" }, function (result) {
+                alert(result);
+            });
+        }
+        function isNumber(好) {
+            return !isNaN(parseFloat(n)) && isFinite(n);
+        }
+        var num = 123;
+        var antzone = "蚂蚁部落";
+        console.log(isNumber(num));
+        console.log(isNumber(antzone));
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" value="推送" onclick="PostBaidu()" />
+    </div>
+    <form method="post" enctype="application/x-www-form-urlencoded" action="http://data.zz.baidu.com/urls?site=www.fang.com&token=mvBuAMGpMc5i6bU7">
+        <input type="hidden" name="url" value="www.fang.com" />
+        <input type="submit" value="提交" />
+    </form>
+
+ 
+  <style type="text/css">  
+    .hewenqiheart{width:160px;height:200px;position:relative}  
+.hewenqiheart:before{content:" ";border: 0 solid transparent; -moz-border-radius:100px;-webkit-border-radius:100px;border-radius:100px 100px 0 0;width:80px;  
+height:120px;background:red;-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);-o-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);  
+  
+position:absolute;left:20px;}  
+.hewenqiheart:after{content:" ";border: 0 solid transparent; -moz-border-radius:100px;-webkit-border-radius:100px;border-radius:100px 100px 0 0;width:80px;  
+height:120px;background:red;-moz-transform: rotate(45deg);-ms-transform: rotate(45deg);-o-transform: rotate(45deg);-webkit-transform: rotate(45deg);  
+position:absolute;left:48px;top:0px;}  
+  </style>  
+ @* <h3>纯CSS画心 by 何问起</h3>  
+  <p>hovertree.com</p>  *@
+  <div class="hewenqiheart">  
+      
+  </div>  
+  
+
+</body>
+</html>

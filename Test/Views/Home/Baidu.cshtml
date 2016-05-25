@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.data</title>
+    <style>
+        #kw {
+            width: 404px;
+            height: 32px;
+            padding: 4px 7px;
+            padding: 6px 7px 2px;
+            font: 16px arial;
+            border: 1px solid #cdcdcd;
+            border-color: #9a9a9a #cdcdcd #cdcdcd #9a9a9a;
+            vertical-align: top;
+        }
+
+        .btn {
+            width: 95px;
+            height: 32px;
+            padding: 0;
+            padding-top: 2px;
+            border: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>@ViewData["Data"]</h2>
+    @Html.ActionLink("我是一个链接", "Razor");
+    @Html.RouteLink("我还是一个链接", new { action="Index"})
+    <div style="text-align: center">
+        <img src="~/Resource/image/baidu.png" id="img" />
+    </div>
+    <div style="text-align: center">
+        <input type="text" id="kw" />
+        <input type="submit" class="btn" value="百度" />
+    </div>
+</body>
+</html>

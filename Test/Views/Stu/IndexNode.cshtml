@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <script type="text/javascript">
+        localStorage.lastname = "Smith";
+        document.write("Last name: " + localStorage.lastname);
+    </script>
+</body>
+</html>
+<script type="text/javascript">
+    localStorage.lastname = "Smith";
+    document.write(localStorage.lastname);
+
+    if (localStorage.pagecount) {
+        localStorage.pagecount = Number(localStorage.pagecount) + 1;
+    }
+    else {
+        localStorage.pagecount = 1;
+    }
+    document.write("Visits " + localStorage.pagecount + " time(s).");
+
+</script>
+
+<script type="text/javascript">
+    if (sessionStorage.pagecount) {
+        sessionStorage.pagecount = Number(sessionStorage.pagecount) + 1;
+    }
+    else {
+        sessionStorage.pagecount = 1;
+    }
+    document.write("Visits " + sessionStorage.pagecount + " time(s) this session.");
+</script>
+
+<html>
+<body>
+<form action="/example/HTML 5/demo_form.asp" method="get">
+Date and time: <input type="datetime"" name="user_date" />
+<input type="submit" />
+</form>
+</body>
+</html>
