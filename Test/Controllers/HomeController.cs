@@ -26,6 +26,11 @@ namespace Test.Controllers
             //return Redirect("Stu/index");
             return View();
         }
+        public ActionResult Tab()
+        {
+            //return Redirect("Stu/index");
+            return View();
+        }
 
     }
 }

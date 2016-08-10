@@ -11,18 +11,37 @@ namespace Test.Controllers
         //
         // GET: /Stu/
 
-        public ActionResult Index(int id=0)
+        public ActionResult Index()
         {
-            ViewBag.Name = id.ToString();
             return View();
         }
-        public ActionResult IndexAPI()
+        public ActionResult IndexPlane()
         {
             return View();
         }
         public ActionResult Indexcalendar()
         {
             return View("Indexcalendar");
+        }
+        public ActionResult test1()
+        {
+            return View("test1");
+        }
+        public ActionResult BigBlack()
+        {
+            return View("BigBlack");
+        }
+        public ActionResult loadpdf()
+        {
+            return View("View1");
+        }
+        public ActionResult Img()
+        {
+            return View("Img");
+        }
+        public ActionResult UploadImg()
+        {
+            return View("Img");
         }
 
     }

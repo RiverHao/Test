@@ -24,5 +24,19 @@ namespace Test.Controllers
             return DateTime.Now.ToString();
         }
 
+
+        public ActionResult Time()
+        {
+            return View();
+        }
+        public ActionResult Rain()
+        {
+            return View();
+        }
+
+        public ActionResult Fire()
+        {
+            return View();
+        }
     }
 }
