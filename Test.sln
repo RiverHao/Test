@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{5CF97EBF-CB5E-472F-BDEF-4DC85ACFC118}"
 EndProject
@@ -13,12 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{50AF61
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestImg", "TestImg\TestImg.csproj", "{D63166BF-73CF-4CA8-A2F4-104054E55C40}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoObjectInterface", "interface\AutoObjectInterface.csproj", "{45B70B5A-59BC-45E5-839F-3F3F482FC071}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyReflection", "AutoObject\StudyReflection.csproj", "{ECE42EC0-428A-46F5-89CE-7009E12D31F0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoObjectTest", "AutoObjectTest\AutoObjectTest.csproj", "{7613C888-3656-4932-A185-E9E8CE790781}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,18 +32,6 @@ Global
 		{D63166BF-73CF-4CA8-A2F4-104054E55C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D63166BF-73CF-4CA8-A2F4-104054E55C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D63166BF-73CF-4CA8-A2F4-104054E55C40}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45B70B5A-59BC-45E5-839F-3F3F482FC071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45B70B5A-59BC-45E5-839F-3F3F482FC071}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45B70B5A-59BC-45E5-839F-3F3F482FC071}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45B70B5A-59BC-45E5-839F-3F3F482FC071}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ECE42EC0-428A-46F5-89CE-7009E12D31F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ECE42EC0-428A-46F5-89CE-7009E12D31F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ECE42EC0-428A-46F5-89CE-7009E12D31F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ECE42EC0-428A-46F5-89CE-7009E12D31F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7613C888-3656-4932-A185-E9E8CE790781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7613C888-3656-4932-A185-E9E8CE790781}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7613C888-3656-4932-A185-E9E8CE790781}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7613C888-3656-4932-A185-E9E8CE790781}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
