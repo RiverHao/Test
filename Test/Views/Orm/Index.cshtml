@@ -1,0 +1,298 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>JsCalendar</title>
+    <script src="~/Resource/jquery/jquery-1.9.1.min.js"></script>
+    <style>
+        body, ul, li, h2, p {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font: 12px/1.5 tahoma;
+        }
+
+        #calendar {
+            width: 248px;
+            overflow: hidden;
+            zoom: 1;
+            background: #eaeaea;
+            margin: 10px auto;
+            padding: 0 0 10px 10px;
+        }
+
+            #calendar ul {
+                overflow: hidden;
+                zoom: 1;
+            }
+
+            #calendar li {
+                color: #fff;
+                float: left;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                font-size: 14px;
+                text-align: center;
+                background: #424242;
+                line-height: 1.3;
+                list-style-type: none;
+                border: 1px solid #424242;
+                margin: 10px 10px 0 0;
+                padding: 5px;
+            }
+
+                #calendar li.current {
+                    color: #F69;
+                    background: #fff;
+                }
+
+                #calendar li strong {
+                    display: block;
+                    font-size: 18px;
+                }
+
+        #msg {
+            color: #666;
+            background: #f1f1f1;
+            border: 1px solid #fff;
+            margin: 10px 10px 0 0;
+            padding: 5px;
+        }
+
+            #msg h2 {
+                font-size: 14px;
+            }
+
+        .div {
+            width: 500px;
+            height: 300px;
+            /*高度可以不设*/ margin: -10px 0 0 -250px;
+            position: relative;
+            /*相对定位*/ background-color: pink;
+            /*方便看效果*/ left: 50%;
+            top: 50%;
+        }
+        /*.divtriangle {
+            width: 0;
+            height: 0;
+            border-width: 20px;
+            border-style: solid;
+            border-color: transparent transparent red transparent;
+        }*/
+        .divtriangle {
+            width: 0;
+            height: 0;
+            border-bottom: 100px solid red;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="divtriangle" style="position:absolute;top:inherit">
+
+    </div>
+    <div class="div"></div>
+    <div style="height:1px;overflow:hidden;background:red"></div>
+    <div id="calendar">
+        <ul>
+            <li><strong>1</strong>JAN</li>
+            <li><strong>2</strong>FEB</li>
+            <li><strong>3</strong>MAR</li>
+            <li><strong>4</strong>APR</li>
+            <li><strong>5</strong>MAY</li>
+            <li class="current"><strong>6</strong>JUN</li>
+            <li><strong>7</strong>JULY</li>
+            <li><strong>8</strong>AUG</li>
+            <li><strong>9</strong>SEP</li>
+            <li><strong>10</strong>OCT</li>
+            <li><strong>11</strong>NOV</li>
+            <li><strong>12</strong>DEC</li>
+        </ul>
+        <div id="msg">
+            <h2>
+                <strong>6</strong>
+                月节日
+            </h2>
+            <p>端午节，6月4日到6日放假3天</p>
+        </div>
+    </div>
+
+    <div id="test">
+        <ul>
+            <li style="text-shadow:5px 5px 5px #CCCCCC">我是1</li>
+            <li>我是2</li>
+            <li>我是3</li>
+            <li>我是4</li>
+            <li>我是5</li>
+        </ul>
+
+
+        <p style="line-height: inherit; letter-spacing:initial"><h2>我是css3</h2></p>
+    </div>
+
+    <div id="div1">hhh</div>
+    <div id="div2">fdgf</div>
+    <div id="div3">gfdgdf</div>
+    <div id="div4">rtert</div>
+</body>
+</html>
+<script type="text/javascript">
+    window.onload = function () {
+        Move();
+
+
+        var oli = document.getElementById("calendar").getElementsByTagName("li");
+        var msg = document.getElementById("msg");
+        var op = msg.getElementsByTagName("p")[0];
+        var strong = msg.getElementsByTagName("strong")[0];
+        var oarray = ["元旦：1月1日至3日放假三天。",
+"春节：2月2日至8日放假7天。",
+"妇女节：3月8日妇女节，与我无关。",
+"清明节：4月3日至5日放假3天",
+"劳动节：4月30日至5月2日放假3天。",
+"端午节：6月4日至6日放假3天。",
+"小暑：7月7日小暑。不放假。",
+"七夕节：8月6日七夕节。不放假。",
+"中秋节：9月10日至12日放假3天。",
+"国庆节：10月1日至7日放假7天。",
+"立冬：11月8日立冬。不放假。",
+"艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。"];
+
+        for (var i = 0; i < oli.length; i++) {
+            oli[i].index = i;
+            oli[i].onmouseover = function () {
+                for (var n = 0; n < oli.length; n++) {
+                    oli[n].className = "";
+                    this.className = "current";
+                    op.innerHTML = oarray[this.index];
+                    strong.innerHTML = this.index + 1;
+                }
+            }
+        }
+
+
+        $.fn.stringifyArray = function (array) {
+            return JSON.stringify(array);
+        }
+        $.fn.parseJson = function (array) {
+            return JSON.parse(array);
+        }
+
+
+        function style(obj, attr) {
+            if (obj.currentstyle) {
+                return obj.currentstyle[attr];
+            }
+            else {
+                return getComputedStyle(obj, false)[attr];
+            }
+        }
+
+        function Move() {
+            var top = $(".divtriangle").offset().top;
+            $(".divtriangle").attr({ "top": top });
+            setTimeout(Move, 600);
+        }
+
+
+        console.log(2 + true + false);
+
+        //function add(a)
+        //{
+        //    return function (b)
+        //    {
+        //        return a + b;
+        //    }
+        //}
+
+        function add(a, b) {
+            var ddd = function (b) { return a + b }
+            if (typeof b != undefined) {
+                return ddd;
+            }
+            else {
+                return ddd(b);
+            }
+        }
+
+
+        console.log(add(2, 3));
+        console.log(add(2)(3));
+
+
+        var lis = document.getElementById("test").getElementsByTagName("li");
+
+        for (var i = 0; i < lis.lenth; i++) {
+            //lis[i] = i;
+            //lis[i].onclick = function () {
+            //    for (var n = 0; n < lis.length; n++)
+            //    {
+            //        alert(lis[i]);
+            //    }
+            //}
+            (function (i) {
+                //var p = i
+                lis[i].onclick = function () {
+                    alert(i);
+                }
+            })(i);
+        }
+
+
+
+        var underfined;
+        undefined == null;
+        1 == true;
+        2 == true;
+        0 == false;
+        0 == "";
+        NaN == NaN;
+        [] == ![];
+        [] == false;
+
+    }
+    function Foo(a) {
+        getName = function () { alert(1); }
+        return this;
+    }
+    Foo.getName = function (b) { alert(2) };
+    Foo.prototype.getName = function (c) { alert(3) };
+    var getName = function () { alert(4) };
+    function getName() { alert(5) };
+
+
+    for (var i = 0; i <= 4; i++) {
+        $("#div" + i).click(function (counter) {
+            return function () {
+                alert(counter);
+            }
+
+        });
+    }
+
+    var lis = document.getElementById("test").getElementsByTagName("li");
+    for (var i = 0; i <= 4; i++) {
+        //lis[i].index = i;
+        //lis[i].onclick = (function (i) {
+        //    return function () {
+        //        alert(i);
+        //    }
+        //})(i);
+
+
+        lis[i].index = i;
+        lis[i].onclick = function () {
+            alert(this.index);
+        }
+    }
+
+</script>

@@ -16,7 +16,7 @@ namespace Test
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Test", action = "JsCalendar", id = UrlParameter.Optional }
+                defaults: new { controller = "Orm", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
